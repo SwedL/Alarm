@@ -37,7 +37,7 @@ class Budil(QThread):
         while True:
             self.current_time = QTime.currentTime()
             QtCore.QThread.msleep(750)
-            if self.alarm_time and self.current_time > self.alarm_time:    # если время сигнала установлено то идёт сверка
+            if self.alarm_time and self.current_time >= self.alarm_time:    # если время сигнала установлено то идёт сверка
                 self.play_audio('alarm0.wav')
             if self.off2000 and self.current_time > QTime(20, 0, 0):
                 self.play_audio('off.mp3')
@@ -60,6 +60,7 @@ class ExampleApp(QtWidgets.QMainWindow, alarm_design.Ui_mainWindow):
         self.budil.off2000 = self.radioButton.isChecked()    # вкл/выкл проверки на 20:00 согласно состоянию of2000
         self.radioButton.clicked.connect(self.of2000)    # вызов функции вкл. of2000
         self.alarm = False
+        self.alarmEdit.setTime(QTime.currentTime())
         self.alarmEdit.timeChanged.connect(self.disarmed)    # при изменении времени будильника кнопка SET отключается
 
     def disarmed(self):                             # ф-я отключающая будильник при изменении времени
