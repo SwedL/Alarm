@@ -8,7 +8,7 @@ from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from PyQt5.QtWidgets import QApplication
 
 
-import alarm_design  # Это наш конвертированный файл дизайна
+import timer_design  # Это наш конвертированный файл дизайна
 
 
 class Budil(QThread):
@@ -46,7 +46,7 @@ class Budil(QThread):
                 self.turn_off()
 
 
-class ExampleApp(QtWidgets.QMainWindow, alarm_design.Ui_mainWindow):
+class ExampleApp(QtWidgets.QMainWindow, timer_design.Ui_mainWindow):
     def __init__(self):
         super().__init__()
 
