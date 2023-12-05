@@ -37,8 +37,9 @@ class Budil(QThread):
         while True:
             self.current_time = QTime.currentTime()
             QtCore.QThread.msleep(750)
-            if self.alarm_time and self.current_time >= self.alarm_time:    # если время сигнала установлено то идёт сверка
-                self.play_audio('alarm0.wav')
+            # если время сигнала установлено то идёт сверка
+            if self.alarm_time and self.current_time >= self.alarm_time:
+                self.play_audio('beep.wav')
             if self.off2000 and self.current_time > QTime(20, 0, 0):
                 self.play_audio('off.mp3')
                 QtCore.QThread.msleep(2000)
@@ -80,6 +81,7 @@ class ExampleApp(QtWidgets.QMainWindow, alarm_design.Ui_mainWindow):
     def of2000(self):                                          # вкл/выкл проверки на выключение после 20:00
         self.budil.off2000 = self.radioButton.isChecked()
 
+
 def move2RightBottomCorner(win):
     screen_geometry = QApplication.desktop().availableGeometry()    # получение размеров экрана
     screen_size = (screen_geometry.width(), screen_geometry.height())    # ширина/длина экрана
@@ -87,6 +89,7 @@ def move2RightBottomCorner(win):
     x = screen_size[0] - win_size[0] - win_size[1]
     y = screen_size[1] - win_size[1]
     win.move(x, y)
+
 
 def main():
     app = QtWidgets.QApplication(sys.argv)    # Новый экземпляр QApplication
