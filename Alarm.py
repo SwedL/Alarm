@@ -8,7 +8,7 @@ from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from PyQt5.QtWidgets import QApplication
 
 
-import timer_design  # Это наш конвертированный файл дизайна
+import alarm_design  # Это наш конвертированный файл дизайна
 
 
 class Budil(QThread):
@@ -46,13 +46,13 @@ class Budil(QThread):
                 self.turn_off()
 
 
-class ExampleApp(QtWidgets.QMainWindow, timer_design.Ui_mainWindow):
+class ExampleApp(QtWidgets.QMainWindow, alarm_design.Ui_mainWindow):
     def __init__(self):
         super().__init__()
 
         self.setupUi(self)  # Это нужно для инициализации нашего дизайна
-        self.setWindowTitle('Timer')
-        self.setWindowIcon(QIcon('ENT2.png'))
+        self.setWindowTitle('Alarm')
+        self.setWindowIcon(QIcon('raccoon_logo.png'))
         self.budil = Budil()        # создаём объект поток QThread
         self.budil.start()          # запускаем поток QThread
 
@@ -70,7 +70,8 @@ class ExampleApp(QtWidgets.QMainWindow, timer_design.Ui_mainWindow):
         self.budil.alarm_time = None
 
     def set_clock(self):
-        if not self.alarm and self.alarmEdit.time() > QTime.currentTime(): # будильник не включен if setTime < текущего
+        # будильник не включен if setTime < текущего
+        if not self.alarm and self.alarmEdit.time() > QTime.currentTime():
             self.budil.alarm_time = self.alarmEdit.time()      # установка времени сигнала в будильник
             self.alarm = True                                  # будильник изменён на вкл.
 
@@ -102,4 +103,3 @@ def main():
 
 if __name__ == '__main__':    # Если мы запускаем файл напрямую, а не импортируем
     main()    # то запускаем функцию main()
-
