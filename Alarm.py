@@ -41,7 +41,7 @@ class Budil(QThread):
             if self.alarm_time and self.current_time >= self.alarm_time:
                 self.play_audio('beep.wav')
             if self.off2000 and self.current_time > QTime(20, 0, 0):
-                self.play_audio('off.mp3')
+                self.play_audio('off.wav')
                 QtCore.QThread.msleep(2000)
                 self.turn_off()
 
