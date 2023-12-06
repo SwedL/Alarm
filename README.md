@@ -1,7 +1,7 @@
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/58vsw4K/Alarm.png" width="200" text-align="center" alt="Alarm" border="0"></a>
 
 ![](https://img.shields.io/badge/Pyhton-3.11-orange)
-![](https://img.shields.io/badge/Using-PyQt5-D1FF4F)
+![](https://img.shields.io/badge/PyQt5-5.15.10-D1FF4F)
 
 
 ## About
@@ -26,4 +26,13 @@ Also, for the application to work correctly, you need to copy the sound files **
   + off.wav
 
 ## Instructions
+![](https://i.ibb.co/QMyfKn8/image-alarm.png "image alarm")
 
+![](https://i.ibb.co/tQJztCb/2023-12-06-20-41-45-8.png "clock image") or ![](https://i.ibb.co/jLxLjr6/2023-12-06-20-41-45-5.png "button image") setting the time
+
+![](https://i.ibb.co/HhnWnwJ/2023-12-06-20-41-45-7.png "set/stop image") activate/deactivate the alarm
+
+![](https://i.ibb.co/ZN5Y3S8/2023-12-06-20-41-45-4.png "turn off image") automatic computer shutdown at 20:00
+
+## Developers
+[SwedL](https://github.com/SwedL)
