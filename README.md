@@ -1,8 +1,9 @@
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/58vsw4K/Alarm.png" width="200" text-align="center" alt="Alarm" border="0"></a>
+<p align="center"><img src="https://i.ibb.co/58vsw4K/Alarm.png" width="200"  alt="Logo Alarm" border="0"></p>
 
-![](https://img.shields.io/badge/Pyhton-3.11-orange)
-![](https://img.shields.io/badge/PyQt5-5.15.10-D1FF4F)
-
+<p align="center">
+<img src="https://img.shields.io/badge/Pyhton-3.11-orange" alt="Python shield" border="0">
+<img src="https://img.shields.io/badge/PyQt5-5.15.10-D1FF4F" alt="PyQt5 shield" border="0">
+</p>
 
 ## About
 A simple alarm clock for your desktop. Gives a signal when the specified time is reached. Also implemented is the function of turning off the computer at 20:00
