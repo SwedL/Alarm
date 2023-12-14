@@ -31,7 +31,7 @@ cd Alarm
 ```sh
 pip install -r requirements.txt
 ```
-Create Alarm.exe
+Create Alarm.exe:
 ```python
 pyinstaller -w --onefile Alarm.py 
 ```
