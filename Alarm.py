@@ -53,23 +53,25 @@ class ExampleApp(QtWidgets.QMainWindow, alarm_design.Ui_mainWindow):
         self.setupUi(self)  # Это нужно для инициализации нашего дизайна
         self.setWindowTitle('Alarm')
         self.setWindowIcon(QIcon('raccoon_logo.png'))
-        self.budil = Budil()        # создаём объект поток QThread
-        self.budil.start()          # запускаем поток QThread
+        self.budil = Budil()  # создаём объект поток QThread
+        self.budil.start()  # запускаем поток QThread
 
-        self.pushButton.clicked.connect(self.set_clock)    # при нажатии включаем или отключаем будильник
-        self.radioButton.setChecked(False)    # установка состояния кнопки of2000 (не нажата)
-        self.budil.off2000 = self.radioButton.isChecked()    # вкл/выкл проверки на 20:00 согласно состоянию of2000
-        self.radioButton.clicked.connect(self.of2000)    # вызов функции вкл. of2000
+        self.pushButton.clicked.connect(self.set_clock)  # при нажатии включаем или отключаем будильник
+        self.radioButton.setChecked(False)  # установка состояния кнопки of2000 (не нажата)
+        self.budil.off2000 = self.radioButton.isChecked()  # вкл/выкл проверки на 20:00 согласно состоянию of2000
+        self.radioButton.clicked.connect(self.of2000)  # вызов функции вкл. of2000
         self.alarm = False
         self.alarmEdit.setTime(QTime.currentTime())
-        self.alarmEdit.timeChanged.connect(self.disarmed)    # при изменении времени будильника кнопка SET отключается
+        self.alarmEdit.timeChanged.connect(self.disarmed)  # при изменении времени будильника кнопка SET отключается
 
-    def disarmed(self):                             # ф-я отключающая будильник при изменении времени
+    def disarmed(self):
+        """ функция отключающая будильник при изменении времени """
         self.pushButton.setChecked(False)
         self.alarm = False
         self.budil.alarm_time = None
 
     def set_clock(self):
+        """ функция включения будильника """
         # будильник не включен if setTime < текущего
         if not self.alarm and self.alarmEdit.time() > QTime.currentTime():
             self.budil.alarm_time = self.alarmEdit.time()      # установка времени сигнала в будильник
