@@ -9,6 +9,29 @@
 A simple alarm clock for your desktop. Gives a signal when the specified time is reached. Also implemented is the function of turning off the computer at 20:00
 
 ## Installation
+Pre-create a directory for the application (some directory)<br>
+Clone the repository code into the created directory (in some directory):
+```sh
+git clone https://github.com/SwedL/Alarm.git
+```
+Also in the project directory (some directory) create a virtual environment by running the command:
+
+- Windows: `python -m venv venv`
+- Linux: `python3 -m venv venv`
+
+Activate it with the command:
+
+- Windows: `.\venv\Scripts\activate`
+- Linux: `source venv/bin/activate`
+
+Go to the Alarm directory and install the dependencies in the virtual environment:
+```sh
+cd Alarm
+```
+```sh
+pip install -r requirements.txt
+```
+Create Alarm.exe
 ```python
 pyinstaller -w --onefile Alarm.py 
 ```
@@ -36,4 +59,4 @@ Also, for the application to work correctly, you need to copy the sound files **
 ![](https://i.ibb.co/ZN5Y3S8/2023-12-06-20-41-45-4.png "turn off image") automatic computer shutdown at 20:00
 
 ## Developers
-[SwedL](https://github.com/SwedL)
+* **Осминин Алексей** - [SwedL](https://github.com/SwedL)
