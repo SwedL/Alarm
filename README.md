@@ -24,7 +24,7 @@ git clone https://github.com/SwedL/Alarm.git
 - Windows: `.\venv\Scripts\activate`
 - Linux: `source venv/bin/activate`
 
-Перейдите в каталог Alarm и установите зависимости в виртуальное окурежение:
+Перейдите в каталог Alarm и установите зависимости в виртуальное окружение:
 ```sh
 cd Alarm
 ```
