@@ -5,58 +5,58 @@
 <img src="https://img.shields.io/badge/PyQt5-5.15.10-D1FF4F" alt="PyQt5 shield" border="0">
 </p>
 
-## About
-A simple alarm clock for your desktop. Gives a signal when the specified time is reached. Also implemented is the function of turning off the computer at 20:00
+## Описание приложения
+Таймер-будильник для рабочего стола. Подает сигнал при достижении заданного времени. Также реализована функция выключения компьютера в 20:00.
 
-## Installation
-Pre-create a directory for the application (some directory)<br>
-Clone the repository code into the created directory (in some directory):
+## Установка
+Предварительно создайте каталог для приложения (some directory)<br>
+Клонируйте код репозитория в созданный каталог:
 ```sh
 git clone https://github.com/SwedL/Alarm.git
 ```
-Also in the project directory (some directory) create a virtual environment by running the command:
+Также в каталоге проекта (some directory) создайте виртуальное окружение, выполнив команду:
 
 - Windows: `python -m venv venv`
 - Linux: `python3 -m venv venv`
 
-Activate it with the command:
+Активируйте окружение командой:
 
 - Windows: `.\venv\Scripts\activate`
 - Linux: `source venv/bin/activate`
 
-Go to the Alarm directory and install the dependencies in the virtual environment:
+Перейдите в каталог Alarm и установите зависимости в виртуальное окурежение:
 ```sh
 cd Alarm
 ```
 ```sh
 pip install -r requirements.txt
 ```
-Create Alarm.exe:
+Создайте Alarm.exe используя команду:
 ```python
 pyinstaller -w --onefile Alarm.py 
 ```
-Other installation options can be obtained using:
+С другими вариантами установки можно ознакомиться с помощью команды:
 ```python
 pyinstaller --help
 ```
-The generated Alarm.exe application file will be located in the main directory
-in the **"dist"** directory.
+Сгенерированный файл приложения Alarm.exe будет расположен в основном каталоге.
+в каталоге **"dist"**.
 
-Also, for the application to work correctly, you need to copy the sound files **beep.wav** and **off.wav** to the Alarm.exe directory
+Также для корректной работы приложения необходимо скопировать звуковые файлы **beep.wav** и **off.wav** в директорию Alarm.exe.
 
 + \ some directory
   + Alarm.exe
   + beep.wav
   + off.wav
 
-## Instructions
+## Инструкция
 ![](https://i.ibb.co/QMyfKn8/image-alarm.png "image alarm")
 
-![](https://i.ibb.co/tQJztCb/2023-12-06-20-41-45-8.png "clock image") or ![](https://i.ibb.co/jLxLjr6/2023-12-06-20-41-45-5.png "button image") setting the time
+![](https://i.ibb.co/tQJztCb/2023-12-06-20-41-45-8.png "clock image") или ![](https://i.ibb.co/jLxLjr6/2023-12-06-20-41-45-5.png "button image") setting the time
 
-![](https://i.ibb.co/HhnWnwJ/2023-12-06-20-41-45-7.png "set/stop image") activate/deactivate the alarm
+![](https://i.ibb.co/HhnWnwJ/2023-12-06-20-41-45-7.png "set/stop image") активация/деактивация будильника
 
-![](https://i.ibb.co/ZN5Y3S8/2023-12-06-20-41-45-4.png "turn off image") automatic computer shutdown at 20:00
+![](https://i.ibb.co/ZN5Y3S8/2023-12-06-20-41-45-4.png "turn off image") автоматическое выключение компьютера при достижении 20:00 (08:00 p.m)
 
-## Developers
+## Автор проекта
 * **Осминин Алексей** - [SwedL](https://github.com/SwedL)
